@@ -1,8 +1,11 @@
+import React from 'react';
+import PokeCard from '../Pokecard/Pokecard';
+
 export default function PokeList({ pokemon }) {
   return (
-    <div className="pokeCard">
+    <div>
       {pokemon.map((poke) => (
-        <p key={poke.id}>{poke.pokemon}</p>
+        <PokeCard key={poke.pokemon} {...poke} />
       ))}
     </div>
   );
