@@ -1,5 +1,5 @@
 import React from 'react';
-import { Button, TextField, Select } from '@mui/material';
+import { Button, TextField, Select, MenuItem } from '@mui/material';
 
 export default function Controls({
   query,
@@ -25,15 +25,15 @@ export default function Controls({
         }}
       />
       <Select value={order} onChange={(e) => setOrder(e.target.value)}>
-        <option value="asc">Ascending</option>
-        <option value="desc">Descending</option>
+        <MenuItem value="asc">Ascending</MenuItem>
+        <MenuItem value="desc">Descending</MenuItem>
       </Select>
       <Select value={selectedType} onChange={(e) => setSelectedType(e.target.value)}>
-        <option value="all">All</option>
+        <MenuItem value="all">All</MenuItem>
         {types.map((type) => (
-          <option key={type} value={type}>
+          <MenuItem key={type} value={type}>
             {type}
-          </option>
+          </MenuItem>
         ))}
       </Select>
       <Button varient="outlined" onClick={() => setLoading(true)}>
